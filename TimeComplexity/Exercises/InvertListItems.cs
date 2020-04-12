@@ -5,17 +5,17 @@ namespace TimeComplexity.Exercises
 {
     public static class InvertListItems
     {
-        public static List<int> Invert(List<int> array)
+        public static List<int> Invert(List<int> list)
         {
-            int initialCount = array.Count - 1;
+            int initialCount = list.Count - 1;
 
             for (var i = initialCount; i >= 0; i--)
             {
-                array.Add(array[i]);
-                array.RemoveAt(i);
+                list.Add(list[i]);
+                list.RemoveAt(i);
             }
 
-            return array;
+            return list;
         }
     }
 }

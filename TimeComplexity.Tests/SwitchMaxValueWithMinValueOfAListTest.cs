@@ -1,5 +1,7 @@
-﻿using NUnit.Framework;
+﻿using FluentAssertions;
+using NUnit.Framework;
 using System.Collections.Generic;
+using TimeComplexity.Exercises;
 
 namespace TimeComplexity.Tests
 {
@@ -9,13 +11,23 @@ namespace TimeComplexity.Tests
         //  Write a methos that receives a list of int and switch the positions of the
         //  max value and the min value.
         //  Example: [ 1, 2, 3, 4] to [ 4, 2, 3, 1]
-        //  You shall not use another list as auxiliary list.
         //  The method should have a time complexity of O(n).
-        
-        [Test]
-        public void ShouldSwitchTheMaxValueWithTheMinValueOfAList()
+
+        [Test, TestCaseSource(nameof(ShouldSwitchTheMaxValueWithTheMinValueOfAListTestCaseSource))]
+        public void ShouldSwitchTheMaxValueWithTheMinValueOfAList(List<int> listToManipulate, List<int> expected)
         {
-            //List<int> list 
+            var result = SwitchMaxValueWithMinValueOfAList.Switch(listToManipulate);
+
+            result.Should().BeEquivalentTo(expected);
+        }
+
+        private static IEnumerable<TestCaseData> ShouldSwitchTheMaxValueWithTheMinValueOfAListTestCaseSource
+        {
+            get
+            {
+                yield return new TestCaseData(new List<int> { 1, 2, 3, 4, 5 }, new List<int> { 5, 2, 3, 4, 1 });
+                yield return new TestCaseData(new List<int> { 2, 3, 1, 5 }, new List<int> { 2, 3, 5, 1 });
+            }
         }
     }
 }
