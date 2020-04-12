@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace TimeComplexity.Exercises
 {
-    public static class InvertArrayItems
+    public static class InvertListItems
     {
         public static List<int> Invert(List<int> array)
         {

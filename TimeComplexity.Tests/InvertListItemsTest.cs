@@ -6,7 +6,7 @@ using TimeComplexity.Exercises;
 namespace TimeComplexity.Tests
 {
     [TestFixture]
-    public class InvertArrayItemsTest
+    public class InvertListItemsTest
     {
         //  Write a method that reverses the order of a list. 
         //  You shall not use another list as auxiliary list.
@@ -15,9 +15,9 @@ namespace TimeComplexity.Tests
         [Test]
         public void ShouldInvertTheOrderOfItems()
         {
-            List<int> array = new List<int> { 1, 2, 3, 4, 5 };
+            List<int> input = new List<int> { 1, 2, 3, 4, 5 };
 
-            var result = InvertArrayItems.Invert(array);
+            var result = InvertListItems.Invert(input);
 
             result.Should().BeEquivalentTo(new List<int> { 5, 4, 3, 2, 1 });
         }
