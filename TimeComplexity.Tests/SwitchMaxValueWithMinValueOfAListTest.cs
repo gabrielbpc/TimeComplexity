@@ -16,9 +16,9 @@ namespace TimeComplexity.Tests
         [Test, TestCaseSource(nameof(ShouldSwitchTheMaxValueWithTheMinValueOfAListTestCaseSource))]
         public void ShouldSwitchTheMaxValueWithTheMinValueOfAList(List<int> listToManipulate, List<int> expected)
         {
-            var result = SwitchMaxValueWithMinValueOfAList.Switch(listToManipulate);
+            var output = SwitchMaxValueWithMinValueOfAList.Switch(listToManipulate);
 
-            result.Should().BeEquivalentTo(expected);
+            output.Should().BeEquivalentTo(expected);
         }
 
         private static IEnumerable<TestCaseData> ShouldSwitchTheMaxValueWithTheMinValueOfAListTestCaseSource
