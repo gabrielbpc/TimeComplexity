@@ -8,7 +8,7 @@ namespace TimeComplexity.Tests
     [TestFixture]
     public class SwitchMaxValueWithMinValueOfAListTest
     {
-        //  Write a methos that receives a list of int and switch the positions of the
+        //  Write a method that receives a list of int and switch the positions of the
         //  max value and the min value.
         //  Example: [ 1, 2, 3, 4] to [ 4, 2, 3, 1]
         //  The method should have a time complexity of O(n).

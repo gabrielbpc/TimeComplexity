@@ -19,7 +19,7 @@ namespace TimeComplexity.Tests
         }
 
         // Write a binary search that returns the index of the item.
-        // Binary search if time complexity O(log n).
+        // Binary search is time complexity O(log n).
 
         [Test]
         public void ShouldFindAIntegerIndexOnAnArray()
