@@ -1,5 +1,7 @@
-﻿using NUnit.Framework;
+﻿using FluentAssertions;
+using NUnit.Framework;
 using System.Collections.Generic;
+using TimeComplexity.Exercises;
 
 namespace TimeComplexity.Tests
 {
@@ -20,7 +22,9 @@ namespace TimeComplexity.Tests
         [Test, TestCaseSource(nameof(ShouldCompeteCellsTestAndReturnTheNewStateSource))]
         public void ShouldCompeteCellsTestAndReturnTheNewState(int[] cellsState, int days, int[] stateExpected)
         {
+            var result = CellCompete.Compete(cellsState, days);
 
+            result.Should().BeSameAs(stateExpected);
         }
 
         private static IEnumerable<TestCaseData> ShouldCompeteCellsTestAndReturnTheNewStateSource
