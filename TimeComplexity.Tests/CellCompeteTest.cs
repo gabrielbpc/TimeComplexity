@@ -22,15 +22,16 @@ namespace TimeComplexity.Tests
         [Test, TestCaseSource(nameof(ShouldCompeteCellsTestAndReturnTheNewStateSource))]
         public void ShouldCompeteCellsTestAndReturnTheNewState(int[] cellsState, int days, int[] stateExpected)
         {
-            var result = CellCompete.Compete(cellsState, days);
+            var output = CellCompete.Compete(cellsState, days);
 
-            result.Should().BeSameAs(stateExpected);
+            output.Should().BeEquivalentTo(stateExpected);
         }
 
         private static IEnumerable<TestCaseData> ShouldCompeteCellsTestAndReturnTheNewStateSource
         {
             get
             {
+                //yield return new TestCaseData(new int[] { 1, 0, 0, 0, 0, 1, 0, 0 }, 0, new int[] { 1, 0, 0, 0, 0, 1, 0, 0 });
                 yield return new TestCaseData(new int[] { 1, 0, 0, 0, 0, 1, 0, 0 }, 1, new int[] { 0, 1, 0, 0, 1, 0, 1, 0 });
                 yield return new TestCaseData(new int[] { 1, 1, 1, 0, 1, 1, 1, 1 }, 2, new int[] { 0, 0, 0, 0, 0, 1, 1, 0 });
             }
