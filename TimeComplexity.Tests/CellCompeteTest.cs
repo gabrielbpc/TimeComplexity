@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace TimeComplexity.Tests
 {
     [TestFixture]
-    public class HousesTest
+    public class CellCompeteTest
     {
         //  Eight houses, represented as cells, are arranged in a straight line. Each day every cell competes
         //  with its adjacent cell (neighbors). An integer value of 1 represents an active cell and a value
